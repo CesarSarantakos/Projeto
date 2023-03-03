@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Busca
+{% endblock %}
+
+{% block body %}
+    <h1>Pesquisa</h1>
+
+    <p>Você quis dizer...</p>
+
+    <ul>
+        {% for entry in recommendation %}
+            <li><a href="{% url 'entry' title=entry %}">{{entry}}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

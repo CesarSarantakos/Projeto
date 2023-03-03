@@ -1,0 +1,23 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Novo Estado
+{% endblock %}
+
+{% block body %}
+    <h1>Novo estado</h1>
+    <form action="{% url 'new_page' %}" method="POST">
+        {% csrf_token %}
+        <label>Nome:</label>
+        <input type="text" name="title" placeholder="Sigla do estado">
+        <br/>
+        <label>Cidades:</label>
+        <br/>
+        <textarea name="content" placeholder="Cidades a serem listadas" ></textarea>
+        <br/>
+        <input type="submit" value="Adicionar"class="btn btn-primary">
+    </form>
+
+
+
+{% endblock %} 

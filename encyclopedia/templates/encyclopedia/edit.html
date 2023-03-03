@@ -1,0 +1,24 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+{% block body %}
+    <h1>Editar</h1>
+    <form action="{% url 'save_edit' %}" method="POST">
+        {% csrf_token %}
+
+        <label>Nome do estado:</label>
+        <input type="text" name="title" placeholder="..." value="{{title}}">
+        <br/>
+        <label>Cidades:</label>
+        <br/>
+        <textarea name="content" placeholder="Cidades a serem listadas...">{{content}} </textarea>
+        <br/>
+        <input type="submit" value="Salvar" class="btn btn-primary">
+    </form>
+
+
+
+{% endblock %}
